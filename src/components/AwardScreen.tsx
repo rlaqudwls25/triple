@@ -3,15 +3,18 @@ import styled from 'styled-components';
 import { mixin } from '../styles/mixin';
 import { AWARD_DATA } from '../data/Count';
 
+export interface IAwardDataProps {
+  item: {
+    id: number;
+    awardtitle: string;
+    awardcontent: string;
+  };
+}
 export interface IAwardScreenProps {
   fadeInThree: object;
 }
 
-export interface IAwardDataProps extends IAwardScreenProps {
-  id: number;
-}
-
-export const AwardScreen = ({ fadeInThree }: IAwardDataProps) => {
+export const AwardScreen = ({ fadeInThree }: IAwardScreenProps) => {
   return (
     <AwardWrapper {...fadeInThree}>
       {AWARD_DATA.map((item, idx) => {
@@ -32,7 +35,7 @@ const AwardWrapper = styled.div<any>`
   ${mixin.marginSet(50, 0, 140, 623)}
 `;
 
-const AwardYearItem = styled.div<IAwardScreenProps>`
+const AwardYearItem = styled.div<IAwardDataProps>`
   height: 54px;
   margin-left: ${props => (props.item.id === 1 ? '' : '20px')};
   background-size: 54px 54px;

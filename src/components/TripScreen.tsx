@@ -49,9 +49,13 @@ export const TripScreen = ({
           return (
             <TravlerContent key={idx}>
               <Count>
-                {userCount && item.id === 1 ? userCount : ''}
-                {reviewCount && item.id === 2 ? reviewCount : ''}
-                {scheduleCount && item.id === 3 ? scheduleCount : ''}
+                {userCount && item.id === 1
+                  ? userCount
+                  : reviewCount && item.id === 2
+                  ? reviewCount
+                  : scheduleCount && item.id === 3
+                  ? scheduleCount
+                  : ''}
                 {item.countTitle}
               </Count>
               <Trip>{item.countSubTitle}</Trip>
