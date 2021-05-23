@@ -1,17 +1,20 @@
 export const COUNT_DATA = [
   {
     id: 1,
-    countTitle: '만 명',
+    maxCount: 350,
+    countTitle: '명',
     countSubTitle: '의 사용자',
   },
   {
     id: 2,
-    countTitle: '만 개',
+    maxCount: 21,
+    countTitle: '개',
     countSubTitle: '의 리뷰',
   },
   {
     id: 3,
-    countTitle: '만 개',
+    maxCount: 650,
+    countTitle: '개',
     countSubTitle: '의 저장',
   },
 ];
